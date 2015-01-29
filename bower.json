@@ -1,0 +1,19 @@
+{
+  "name": "purescript-nullable",
+  "version": "0.1.0",
+  "authors": [
+    "Phil Freeman <paf31@cantab.net>"
+  ],
+  "description": "A library for dealing with nulls",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "purescript-maybe": "~0.2.1"
+  }
+}
