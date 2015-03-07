@@ -14,7 +14,7 @@ foreign import null
     
 foreign import nullable
   "function nullable(a, r, f) {\
-  \  return a === null ? r : f(a);\
+  \  return a === null || typeof a === 'undefined' ? r : f(a);\
   \}" :: forall a r. Fn3 (Nullable a) r (a -> r) r
 
 foreign import notNull 
