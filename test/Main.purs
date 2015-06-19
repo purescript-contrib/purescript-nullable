@@ -1,9 +1,11 @@
 module Test.Main where
 
-import Debug.Trace
+import Prelude
 
 import Data.Maybe
 import Data.Nullable
+
+import Control.Monad.Eff.Console
 
 main = do
   print $ toNullable (Nothing :: Maybe Number)
