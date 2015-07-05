@@ -6,7 +6,7 @@
 exports.$$null = null;
 
 exports.nullable = function(a, r, f) {
-    return a === null || typeof a === 'undefined' ? r : f(a);
+    return a == null ? r : f(a);
 };
 
 exports.notNull = function(x) {
