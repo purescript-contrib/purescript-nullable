@@ -1,8 +1,6 @@
 /* global exports */
 "use strict";
 
-// module Data.Nullable
-
 exports["null"] = null;
 
 exports.nullable = function(a, r, f) {
@@ -11,4 +9,4 @@ exports.nullable = function(a, r, f) {
 
 exports.notNull = function(x) {
     return x;
-}; 
+};
