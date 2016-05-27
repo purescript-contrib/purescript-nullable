@@ -2,17 +2,17 @@ module Test.Main where
 
 import Prelude
 
-import Data.Maybe
-import Data.Nullable
+import Data.Maybe (Maybe(..))
+import Data.Nullable (toNullable, toMaybe)
 
-import Control.Monad.Eff.Console
+import Control.Monad.Eff.Console (logShow)
 
 main = do
-  print $ toNullable (Nothing :: Maybe Number)
-  print $ toNullable (Just 42)
+  logShow $ toNullable (Nothing :: Maybe Number)
+  logShow $ toNullable (Just 42)
 
-  print $ toMaybe $ toNullable (Nothing :: Maybe Number)
-  print $ toMaybe $ toNullable (Just 42)
+  logShow $ toMaybe $ toNullable (Nothing :: Maybe Number)
+  logShow $ toMaybe $ toNullable (Just 42)
 
-  print $ toNullable Nothing == toNullable (Just 42)
-  print $ toNullable Nothing `compare` toNullable (Just 42)
+  logShow $ toNullable Nothing == toNullable (Just 42)
+  logShow $ toNullable Nothing `compare` toNullable (Just 42)
