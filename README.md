@@ -9,4 +9,4 @@ A library for dealing with null values in foreign libraries.
 
     bower i purescript-nullable
 
-- [Module Documentation](docs/Data/Nullable.md)
+- [Module Documentation](https://pursuit.purescript.org/packages/purescript-nullable/1.0.1/docs/Data.Nullable)
