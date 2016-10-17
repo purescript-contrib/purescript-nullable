@@ -2,12 +2,12 @@
 -- | using the FFI.
 
 module Data.Nullable
-  ( Nullable()
+  ( Nullable
   , toMaybe
   , toNullable
   ) where
 
-import Prelude (class Ord, class Eq, class Show, compare, eq, show)
+import Prelude
 
 import Data.Function (on)
 import Data.Function.Uncurried (Fn3, runFn3)
@@ -35,10 +35,8 @@ toNullable = maybe null notNull
 toMaybe :: forall a. Nullable a -> Maybe a
 toMaybe n = runFn3 nullable n Nothing Just
 
-instance showNullable :: (Show a) => Show (Nullable a) where
-  show n = case toMaybe n of
-             Nothing -> "null"
-             Just a -> show a
+instance showNullable :: Show a => Show (Nullable a) where
+  show = maybe "null" show <<< toMaybe
 
 instance eqNullable :: (Eq a) => Eq (Nullable a) where
   eq = eq `on` toMaybe
