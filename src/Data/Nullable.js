@@ -1,12 +1,11 @@
-/* global exports */
 "use strict";
 
 exports["null"] = null;
 
-exports.nullable = function(a, r, f) {
-    return a == null ? r : f(a);
+exports.nullable = function (a, r, f) {
+  return a == null ? r : f(a);
 };
 
-exports.notNull = function(x) {
-    return x;
+exports.notNull = function (x) {
+  return x;
 };
