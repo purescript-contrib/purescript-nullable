@@ -15,7 +15,8 @@
   ],
   "dependencies": {
     "purescript-maybe": "^2.0.0",
-    "purescript-functions": "^2.0.0"
+    "purescript-functions": "^2.0.0",
+    "purescript-isomorphisms": "^3.0.0"
   },
   "repository": {
     "type": "git",
