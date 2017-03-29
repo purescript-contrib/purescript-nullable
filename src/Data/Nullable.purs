@@ -17,7 +17,7 @@ import Data.Maybe (Maybe(..), maybe)
 -- |
 -- | This type constructor may be useful when interoperating with JavaScript functions
 -- | which accept or return null values.
-foreign import data Nullable :: * -> *
+foreign import data Nullable :: Type -> Type
 
 -- | The null value.
 foreign import null :: forall a. Nullable a
@@ -38,8 +38,8 @@ toMaybe n = runFn3 nullable n Nothing Just
 instance showNullable :: Show a => Show (Nullable a) where
   show = maybe "null" show <<< toMaybe
 
-instance eqNullable :: (Eq a) => Eq (Nullable a) where
+instance eqNullable :: Eq a => Eq (Nullable a) where
   eq = eq `on` toMaybe
 
-instance ordNullable :: (Ord a) => Ord (Nullable a) where
+instance ordNullable :: Ord a => Ord (Nullable a) where
   compare = compare `on` toMaybe
