@@ -9,9 +9,11 @@ module Data.Nullable
 
 import Prelude
 
+import Data.Eq (class Eq1)
 import Data.Function (on)
 import Data.Function.Uncurried (Fn3, runFn3)
 import Data.Maybe (Maybe(..), maybe)
+import Data.Ord (class Ord1)
 
 -- | A nullable type.
 -- |
@@ -41,5 +43,11 @@ instance showNullable :: Show a => Show (Nullable a) where
 instance eqNullable :: Eq a => Eq (Nullable a) where
   eq = eq `on` toMaybe
 
+instance eq1Nullable :: Eq1 Nullable where
+  eq1 = eq
+
 instance ordNullable :: Ord a => Ord (Nullable a) where
   compare = compare `on` toMaybe
+
+instance ord1Nullable :: Ord1 Nullable where
+  compare1 = compare
