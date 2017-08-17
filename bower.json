@@ -15,7 +15,8 @@
   ],
   "dependencies": {
     "purescript-maybe": "^3.0.0",
-    "purescript-functions": "^3.0.0"
+    "purescript-functions": "^3.0.0",
+    "purescript-foldable-traversable": "^3.4.0"
   },
   "repository": {
     "type": "git",
