@@ -3,6 +3,8 @@
 
 module Data.Nullable
   ( Nullable
+  , null
+  , notNull
   , toMaybe
   , toNullable
   ) where
