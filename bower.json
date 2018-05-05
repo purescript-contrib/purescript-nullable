@@ -14,14 +14,14 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-maybe": "^3.0.0",
-    "purescript-functions": "^3.0.0"
+    "purescript-maybe": "#compiler/0.12",
+    "purescript-functions": "#compiler/0.12"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/paf31/purescript-nullable.git"
   },
   "devDependencies": {
-    "purescript-console": "^3.0.0"
+    "purescript-console": "#compiler/0.12"
   }
 }
