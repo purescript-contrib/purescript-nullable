@@ -5,6 +5,10 @@
   ],
   "description": "A library for dealing with nulls",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript-contrib/purescript-nullable.git"
+  },
   "ignore": [
     "**/.*",
     "bower_components",
@@ -14,14 +18,10 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-maybe": "^3.0.0",
-    "purescript-functions": "^3.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/paf31/purescript-nullable.git"
+    "purescript-maybe": "#compiler/0.12",
+    "purescript-functions": "#compiler/0.12"
   },
   "devDependencies": {
-    "purescript-console": "^3.0.0"
+    "purescript-assert": "#compiler/0.12"
   }
 }
