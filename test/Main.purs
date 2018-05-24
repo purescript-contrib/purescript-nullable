@@ -2,18 +2,26 @@ module Test.Main where
 
 import Prelude
 
-import Control.Monad.Eff (Eff)
-import Control.Monad.Eff.Console (CONSOLE, logShow)
 import Data.Maybe (Maybe(..))
 import Data.Nullable (toNullable, toMaybe)
+import Effect (Effect)
+import Test.Assert (assertEqual)
 
-main :: Eff (console :: CONSOLE) Unit
+main :: Effect Unit
 main = do
-  logShow $ toNullable (Nothing :: Maybe Number)
-  logShow $ toNullable (Just 42)
-
-  logShow $ toMaybe $ toNullable (Nothing :: Maybe Number)
-  logShow $ toMaybe $ toNullable (Just 42)
-
-  logShow $ toNullable Nothing == toNullable (Just 42)
-  logShow $ toNullable Nothing `compare` toNullable (Just 42)
+  assertEqual
+    { actual: toMaybe $ toNullable (Nothing :: Maybe Number)
+    , expected: Nothing
+    }
+  assertEqual
+    { actual: toMaybe $ toNullable (Just 42)
+    , expected: Just 42
+    }
+  assertEqual
+    { actual: toNullable Nothing == toNullable (Just 42)
+    , expected: false
+    }
+  assertEqual
+    { actual: toNullable Nothing `compare` toNullable (Just 42)
+    , expected: LT
+    }
