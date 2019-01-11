@@ -53,3 +53,18 @@ instance ordNullable :: Ord a => Ord (Nullable a) where
 
 instance ord1Nullable :: Ord1 Nullable where
   compare1 = compare
+
+instance nullableFunctor :: Functor Nullable where
+  map f a = runFn3 nullable a null (notNull <<< f)
+
+instance applyNullable :: Apply Nullable where
+  apply nf na = runFn3 nullable nf null \f ->
+    runFn3 nullable na null \a -> notNull (f a)
+
+instance applicativeNullable :: Applicative Nullable where
+  pure = notNull
+
+instance bindNullable :: Bind Nullable where
+  bind n f = runFn3 nullable n null (f $ _)
+
+instance monadNullable :: Monad Nullable
