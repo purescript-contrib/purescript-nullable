@@ -19,9 +19,11 @@
   ],
   "dependencies": {
     "purescript-maybe": "^4.0.0",
-    "purescript-functions": "^4.0.0"
+    "purescript-functions": "^4.0.0",
+    "purescript-profunctor-lenses": "^6.2.0"
   },
   "devDependencies": {
-    "purescript-assert": "^4.0.0"
+    "purescript-assert": "^4.0.0",
+    "purescript-psci-support": "^4.0.0"
   }
 }

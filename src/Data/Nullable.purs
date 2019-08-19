@@ -7,6 +7,7 @@ module Data.Nullable
   , notNull
   , toMaybe
   , toNullable
+  , _maybe
   ) where
 
 import Prelude
@@ -14,6 +15,7 @@ import Prelude
 import Data.Eq (class Eq1)
 import Data.Function (on)
 import Data.Function.Uncurried (Fn3, runFn3)
+import Data.Lens (Iso, iso)
 import Data.Maybe (Maybe(..), maybe)
 import Data.Ord (class Ord1)
 
@@ -60,6 +62,23 @@ toNullable = maybe null notNull
 -- | its argument (see the warning about the pitfall of `Nullable` above).
 toMaybe :: forall a. Nullable a -> Maybe a
 toMaybe n = runFn3 nullable n Nothing Just
+
+-- | An isomorphism between `Nullable` and `Maybe`. Note that this optic 
+-- | may not be law-abiding (see the warning about the pitfall of `Nullable`
+-- | above). Can be used with iso-compatible functions like `view` and `review`:
+-- |
+-- | ```purs
+-- | > view _maybe (notNull 10) :: Maybe Int
+-- | Just 10
+-- |
+-- | > review _maybe (Just 10) :: Nullable Int
+-- | 10 -- `Nullable` not displayed in the repl due to its `Show` instance
+-- |
+-- | > review _maybe Nothing :: Nullable Int
+-- | null
+-- | ```
+_maybe :: forall a b. Iso (Nullable a) (Nullable b) (Maybe a) (Maybe b)
+_maybe = iso toMaybe toNullable
 
 instance showNullable :: Show a => Show (Nullable a) where
   show = maybe "null" show <<< toMaybe
