@@ -2,12 +2,7 @@
 !.gitignore
 !.github
 !.editorconfig
-!.eslintrc.json
 
 output
 generated-docs
 bower_components
-
-node_modules
-package-lock.json
-*.lock
