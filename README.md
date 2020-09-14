@@ -5,7 +5,7 @@
 [![Pursuit](https://pursuit.purescript.org/packages/purescript-nullable/badge)](https://pursuit.purescript.org/packages/purescript-nullable)
 [![Maintainer: paf31](https://img.shields.io/badge/maintainer-paf31-teal.svg)](https://github.com/paf31)
 
-The library summary hasn't been written yet (contributions are welcome!). The library summary describes the library's purpose in one to three sentences.
+A library for dealing with null values in foreign libraries.
 
 ## Installation
 
