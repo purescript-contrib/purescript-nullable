@@ -19,6 +19,8 @@ spago install nullable
 
 ## Quick start
 
+> The following example lives in [`examples`](./examples) and can be built and run using `spago -x examples.dhall run`.
+
 Here we have a little JavaScript function that we can use to determine whether a number is unlucky. We give it some number and it will either return `null` if the number is considered "unlucky" or just return the number otherwise:
 
 ```js
