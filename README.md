@@ -7,6 +7,8 @@
 
 A library for dealing with null values in foreign libraries.
 
+`nullable` is intended to be used with PureScript's [Foreign Function Interface (FFI)](https://github.com/purescript/documentation/blob/master/guides/FFI.md). If you are looking for general-purpose optional values, use [`Maybe`](https://github.com/purescript/purescript-maybe) instead.
+
 ## Installation
 
 Install `nullable` with [Spago](https://github.com/purescript/spago):
@@ -17,7 +19,70 @@ spago install nullable
 
 ## Quick start
 
-The quick start hasn't been written yet (contributions are welcome!). The quick start covers a common, minimal use case for the library, whereas longer examples and tutorials are kept in the [docs directory](./docs).
+Here we have a little JavaScript function that we can use to determine whether a number is unlucky. We give it some number and it will either return `null` if the number is considered "unlucky" or just return the number otherwise:
+
+```js
+"use strict";
+
+exports.unluckyImpl = function (n) {
+  // Unlucky number 13!
+  if (n === 13) {
+    return null;
+  }
+
+  return n;
+};
+```
+
+If we want to use this function from PureScript we'll need to go through the FFI:
+
+```purescript
+module QuickStart
+  ( unlucky -- We only want to expose our "safe" `unlucky` function outside of
+            -- this module and keep the backing implementation (`unluckyImpl`)
+            -- hidden.
+  ) where
+
+import Prelude
+import Data.Function.Uncurried (Fn1, runFn1)
+import Data.Maybe (Maybe)
+import Data.Nullable (Nullable, toMaybe)
+
+-- Here we declare a binding to a foreign JavaScript function that we'll call
+-- out to using the FFI.
+--
+-- This function takes an `Int` and then returns either an integer or a `null`
+-- based on the given value. We use `Nullable Int` to indicate that we could
+-- get a `null` back from this function.
+foreign import unluckyImpl :: Fn1 Int (Nullable Int)
+
+-- We don't want to have to use `Nullable` in our PureScript code, so we can use
+-- `toMaybe` to convert our `Nullable Int` into a `Maybe Int` which will then be
+-- part of the API visible outside of this module.
+unlucky :: Int -> Maybe Int
+unlucky n = toMaybe $ runFn1 unluckyImpl n
+```
+
+You can run the following to load this example up in the REPL:
+
+```
+spago -x examples.dhall repl
+```
+
+Once the REPL is loaded, go ahead and add the following imports:
+
+```purescript
+import Prelude
+import Data.Maybe
+import QuickStart
+```
+
+You can now test out our `unlucky` function in the REPL:
+
+```purescript
+unlucky 7  == Just 7
+unlucky 13 == Nothing
+```
 
 ## Documentation
 
