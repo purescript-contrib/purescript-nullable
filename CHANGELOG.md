@@ -12,6 +12,8 @@ Bugfixes:
 
 Other improvements:
 
+- Added a quick start ([@maxdeviant](https://github.com/maxdeviant) in [#35](https://github.com/purescript-contrib/purescript-nullable/pull/35))
+
 ## [v4.1.1](https://github.com/purescript-contrib/purescript-nullable/releases/tag/v4.1.1) - 2019-01-12
 
 - Expand documentation
