@@ -43,6 +43,8 @@ import Data.Ord (class Ord1)
 -- | not provided.
 foreign import data Nullable :: Type -> Type
 
+type role Nullable representational
+
 -- | The null value.
 foreign import null :: forall a. Nullable a
 
