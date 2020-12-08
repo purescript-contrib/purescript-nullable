@@ -18,10 +18,10 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-maybe": "^4.0.0",
-    "purescript-functions": "^4.0.0"
+    "purescript-maybe": "master",
+    "purescript-functions": "master"
   },
   "devDependencies": {
-    "purescript-assert": "^4.0.0"
+    "purescript-assert": "master"
   }
 }
