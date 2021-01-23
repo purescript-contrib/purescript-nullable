@@ -5,22 +5,26 @@ Notable changes to this project are documented in this file. The format is based
 ## [Unreleased]
 
 Breaking changes (😱!!!):
+- Added support for PureScript 0.14 and dropped support for all previous versions (#37 by @JordanMartinez)
 
 New features:
+- Added roles declarations to allow safe coercions (#29 by @kl0tl)
 
 Bugfixes:
 
 Other improvements:
-
-- Added a quick start ([@maxdeviant](https://github.com/maxdeviant) in [#35](https://github.com/purescript-contrib/purescript-nullable/pull/35))
+- Added a quick start (#35 by @maxdeviant)
+- Matched repository URL in `bower.json` with the one on the registry (#34)
+- Changed default branch to `main` from `master`
+- Updated to comply with Contributors library guidelines by adding new issue and pull request templates, updating documentation, and migrating to Spago for local development and CI (#30 by @JordanMartinez, #33 by @gillchristian, #36 by @maxdeviant)
 
 ## [v4.1.1](https://github.com/purescript-contrib/purescript-nullable/releases/tag/v4.1.1) - 2019-01-12
 
-- Expand documentation
+- Expanded documentation
 
 ## [v4.1.0](https://github.com/purescript-contrib/purescript-nullable/releases/tag/v4.1.0) - 2018-09-09
 
-- Export `null` and `notNull` (@bklaric)
+- Exported `null` and `notNull` (@bklaric)
 
 ## [v4.0.0](https://github.com/purescript-contrib/purescript-nullable/releases/tag/v4.0.0) - 2018-05-24
 
@@ -28,7 +32,7 @@ Other improvements:
 
 ## [v3.0.0](https://github.com/purescript-contrib/purescript-nullable/releases/tag/v3.0.0) - 2017-04-02
 
-- Updates for 0.11 compiler
+- Updated for PureScript 0.11
 
 ## [v2.0.0](https://github.com/purescript-contrib/purescript-nullable/releases/tag/v2.0.0) - 2016-10-17
 
@@ -36,23 +40,19 @@ Other improvements:
 
 ## [v1.0.1](https://github.com/purescript-contrib/purescript-nullable/releases/tag/v1.0.1) - 2016-06-13
 
-- Fix `bower.json` (@kika)
+- Fixed `bower.json` (@kika)
 
 ## [v1.0.0](https://github.com/purescript-contrib/purescript-nullable/releases/tag/v1.0.0) - 2016-06-02
 
-- Updates for 1.0 core libraries.
+- Updated for 1.0 core libraries.
 
 ## [v0.2.1](https://github.com/purescript-contrib/purescript-nullable/releases/tag/v0.2.1) - 2015-07-24
 
-- Fix `null` issue spotted by @Javran.
+- Fixed `null` issue spotted by @Javran.
 
 ## [v0.2.0](https://github.com/purescript-contrib/purescript-nullable/releases/tag/v0.2.0) - 2015-06-30
 
-- This release works with versions 0.7.\* of the PureScript compiler. It will not work with older versions. If you are using an older version, you should require an older, compatible version of this library.
-
-## [v0.2.0-rc.1](https://github.com/purescript-contrib/purescript-nullable/releases/tag/v0.2.0-rc.1) - 2015-06-19
-
-- Release for the 0.7 compiler.
+- Updated for PureScript 0.7. This release works with versions 0.7.\* of the PureScript compiler. It will not work with older versions. If you are using an older version, you should require an older, compatible version of this library.
 
 ## [v0.1.1](https://github.com/purescript-contrib/purescript-nullable/releases/tag/v0.1.1) - 2015-03-07
 
@@ -61,4 +61,3 @@ Other improvements:
 ## [v0.1.0](https://github.com/purescript-contrib/purescript-nullable/releases/tag/v0.1.0) - 2015-01-29
 
 - Initial release
-
