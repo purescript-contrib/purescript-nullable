@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/paf31/purescript-nullable.git"
+    "url": "https://github.com/purescript-contrib/purescript-nullable.git"
   },
   "ignore": [
     "**/.*",
