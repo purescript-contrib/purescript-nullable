@@ -1,6 +1,12 @@
 { name = "nullable"
 , dependencies =
-  [ "assert", "console", "effect", "functions", "maybe", "psci-support" ]
+  [ "assert"
+  , "effect"
+  , "functions"
+  , "maybe"
+  , "prelude"
+  , "psci-support"
+  ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "test/**/*.purs" ]
 }
