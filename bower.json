@@ -20,10 +20,10 @@
   "dependencies": {
     "purescript-effect": "^3.0.0",
     "purescript-functions": "^5.0.0",
-    "purescript-maybe": "^5.0.0"
+    "purescript-maybe": "^5.0.0",
+    "purescript-prelude": "^5.0.0"
   },
   "devDependencies": {
-    "purescript-assert": "^5.0.0",
-    "purescript-console": "^5.0.0"
+    "purescript-assert": "^5.0.0"
   }
 }
