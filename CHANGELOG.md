@@ -11,6 +11,7 @@ New features:
 Bugfixes:
 
 Other improvements:
+- Added `purs-tidy` formatter (#42 by @thomashoneyman)
 
 ## [v5.0.0](https://github.com/purescript-contrib/purescript-nullable/releases/tag/v5.0.0) - 2021-02-26
 
