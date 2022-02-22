@@ -4,10 +4,10 @@
 
 exports["null"] = null;
 
-exports.nullable = function (a, r, f) {
+export function nullable(a, r, f) {
   return a == null ? r : f(a);
-};
+}
 
-exports.notNull = function (x) {
+export function notNull(x) {
   return x;
-};
+}
