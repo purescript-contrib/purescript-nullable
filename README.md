@@ -3,7 +3,6 @@
 [![CI](https://github.com/purescript-contrib/purescript-nullable/workflows/CI/badge.svg?branch=main)](https://github.com/purescript-contrib/purescript-nullable/actions?query=workflow%3ACI+branch%3Amain)
 [![Release](https://img.shields.io/github/release/purescript-contrib/purescript-nullable.svg)](https://github.com/purescript-contrib/purescript-nullable/releases)
 [![Pursuit](https://pursuit.purescript.org/packages/purescript-nullable/badge)](https://pursuit.purescript.org/packages/purescript-nullable)
-[![Maintainer: thomashoneyman](https://img.shields.io/badge/maintainer-thomashoneyman-teal.svg)](https://github.com/thomashoneyman)
 
 A library for dealing with null values in foreign libraries.
 
