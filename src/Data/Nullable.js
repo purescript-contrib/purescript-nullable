@@ -1,6 +1,7 @@
 /* eslint-disable no-eq-null, eqeqeq */
 
-exports["null"] = null;
+const nullImpl = null;
+export { nullImpl as null };
 
 export function nullable(a, r, f) {
   return a == null ? r : f(a);
