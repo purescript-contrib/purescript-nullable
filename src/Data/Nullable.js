@@ -1,7 +1,5 @@
 /* eslint-disable no-eq-null, eqeqeq */
 
-"use strict";
-
 exports["null"] = null;
 
 export function nullable(a, r, f) {
