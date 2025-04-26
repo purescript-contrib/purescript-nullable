@@ -1,10 +1,18 @@
 {
   "private": true,
   "scripts": {
-    "build": "eslint src && spago build --purs-args '--censor-lib --strict'",
-    "test": "spago test --no-install"
+    "build": "eslint && spago build --censor-stats --strict --ensure-ranges --pedantic-packages",
+    "example:build": "cd examples && spago build --strict",
+    "example:run": "cd examples && spago run",
+    "test": "spago test --offline --strict --pedantic-packages"
   },
   "devDependencies": {
-    "eslint": "^7.6.0"
-  }
+    "@eslint/js": "^9.25.1",
+    "eslint": "^9.25.1",
+    "globals": "^16.0.0",
+    "@eslint/compat": "^1.2.8"
+  },
+  "authors": [
+    "Phil Freeman <paf31@cantab.net>"
+  ]
 }

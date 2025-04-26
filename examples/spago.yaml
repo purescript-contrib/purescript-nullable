@@ -1,0 +1,15 @@
+package:
+  name: nullable-example
+  dependencies:
+    - console
+    - effect
+    - functions
+    - maybe
+    - nullable
+    - prelude
+workspace:
+  packageSet:
+    registry: 64.4.0
+  extraPackages:
+    nullable:
+      path: ..

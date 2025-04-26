@@ -16,6 +16,7 @@ import Data.Function (on)
 import Data.Function.Uncurried (Fn3, runFn3)
 import Data.Maybe (Maybe(..), maybe)
 import Data.Ord (class Ord1)
+import Unsafe.Coerce (unsafeCoerce)
 
 -- | A nullable type. This type constructor is intended to be used for
 -- | interoperating with JavaScript functions which accept or return null
@@ -51,7 +52,8 @@ foreign import null :: forall a. Nullable a
 foreign import nullable :: forall a r. Fn3 (Nullable a) r (a -> r) r
 
 -- | Wrap a non-null value.
-foreign import notNull :: forall a. a -> Nullable a
+notNull :: forall a. a -> Nullable a
+notNull = unsafeCoerce
 
 -- | Takes `Nothing` to `null`, and `Just a` to `a`.
 toNullable :: forall a. Maybe a -> Nullable a
