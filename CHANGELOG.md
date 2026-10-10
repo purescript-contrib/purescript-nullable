@@ -4,6 +4,8 @@ Notable changes to this project are documented in this file. The format is based
 
 ## [Unreleased]
 
+## [v6.0.1](https://github.com/purescript-contrib/purescript-nullable/releases/tag/v6.0.1) - 2026-10-10
+
 Breaking changes:
 
 New features:
