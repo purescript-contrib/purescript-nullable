@@ -1,7 +1,7 @@
 module QuickStart
   ( unlucky -- We only want to expose our "safe" `unlucky` function outside of
-  -- this module and keep the backing implementation (`unluckyImpl`)
-  -- hidden.
+            -- this module and keep the backing implementation (`unluckyImpl`)
+            -- hidden.
   ) where
 
 import Prelude

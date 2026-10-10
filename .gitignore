@@ -3,8 +3,12 @@
 !.github
 !.editorconfig
 !.tidyrc.json
+!.eslintrc.json
 
 output
 generated-docs
 
 node_modules
+package-lock.json
+*.lock
+!spago.lock
