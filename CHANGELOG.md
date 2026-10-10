@@ -9,8 +9,11 @@ Breaking changes:
 New features:
 
 Bugfixes:
+- Repair the QuickStart example's FFI export for PureScript 0.15 ES modules.
 
 Other improvements:
+- Migrate development and publication configuration from Bower and Spago Dhall to registry-backed Spago, preserving published dependency bounds.
+- Update ESLint and CI tooling while retaining existing lint rules and formatting conventions.
 
 ## [v6.0.0](https://github.com/purescript-contrib/purescript-nullable/releases/tag/v6.0.0) - 2022-04-27
 
