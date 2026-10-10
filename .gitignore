@@ -3,7 +3,6 @@
 !.github
 !.editorconfig
 !.tidyrc.json
-!.eslintrc.json
 
 output
 generated-docs
