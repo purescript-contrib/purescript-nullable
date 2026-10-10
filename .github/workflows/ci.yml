@@ -11,41 +11,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
 
-      - name: Set up PureScript toolchain
-        uses: purescript-contrib/setup-purescript@main
+      - name: Set up Node toolchain
+        uses: actions/setup-node@v7
         with:
-          purescript: "unstable"
-          purs-tidy: "latest"
+          node-version: "24"
+          cache: npm
 
       - name: Cache PureScript dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v6
         with:
-          key: ${{ runner.os }}-spago-${{ hashFiles('**/*.dhall') }}
+          key: ${{ runner.os }}-spago-${{ hashFiles('**/spago.yaml', 'spago.lock', 'package-lock.json') }}
           path: |
             .spago
             output
 
-      - name: Set up Node toolchain
-        uses: actions/setup-node@v2
-        with:
-          node-version: "14.x"
-
-      - name: Cache NPM dependencies
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
       - name: Install NPM dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Lint JavaScript
+        run: npm run lint
 
       - name: Build the project
         run: npm run build
@@ -54,13 +40,4 @@ jobs:
         run: npm run test
 
       - name: Check formatting
-        run: purs-tidy check src test
-
-      - name: Verify Bower & Pulp
-        run: |
-          npm install bower pulp@16.0.0-0
-          npx bower install
-          npx pulp build -- --censor-lib --strict
-          if [ -d "test" ]; then
-            npx pulp test
-          fi
+        run: npm run format:check

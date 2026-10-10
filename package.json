@@ -1,10 +1,18 @@
 {
   "private": true,
   "scripts": {
-    "build": "eslint src && spago build --purs-args '--censor-lib --strict'",
-    "test": "spago test --no-install"
+    "build": "spago build --strict --pedantic-packages",
+    "test": "spago test -p nullable --strict --pedantic-packages",
+    "examples": "spago run -p nullable-examples --strict --pedantic-packages",
+    "lint": "oxlint src examples/src",
+    "format": "purs-tidy format-in-place src test examples/src && oxfmt --write 'src/**/*.js' 'examples/src/**/*.js'",
+    "format:check": "purs-tidy check src test examples/src && oxfmt --check 'src/**/*.js' 'examples/src/**/*.js'"
   },
   "devDependencies": {
-    "eslint": "^7.6.0"
+    "oxfmt": "0.72.0",
+    "oxlint": "1.87.0",
+    "purescript": "0.15.16",
+    "purs-tidy": "0.11.1",
+    "spago": "1.0.4"
   }
 }

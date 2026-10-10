@@ -13,6 +13,7 @@ Bugfixes:
 
 Other improvements:
 - Migrate development and publication configuration from Bower and Spago Dhall to registry-backed Spago, preserving published dependency bounds.
+- Pin current PureScript and development tools, replace ESLint with Oxlint/Oxfmt, and update CI to Node.js 24 and current GitHub Actions.
 
 ## [v6.0.0](https://github.com/purescript-contrib/purescript-nullable/releases/tag/v6.0.0) - 2022-04-27
 
