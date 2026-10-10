@@ -18,14 +18,12 @@ spago install nullable
 
 ## Quick start
 
-> The following example lives in [`examples`](./examples) and can be built and run using `spago -x examples.dhall run`.
+> The following example lives in [`examples`](./examples) and can be built and run using `npx spago run -p nullable-examples` after `npm ci`.
 
 Here we have a little JavaScript function that we can use to determine whether a number is unlucky. We give it some number and it will either return `null` if the number is considered "unlucky" or just return the number otherwise:
 
 ```js
-"use strict";
-
-exports.unluckyImpl = function (n) {
+export const unluckyImpl = function (n) {
   // Unlucky number 13!
   if (n === 13) {
     return null;
@@ -67,7 +65,7 @@ unlucky n = toMaybe $ runFn1 unluckyImpl n
 You can run the following to load this example up in the REPL:
 
 ```
-spago -x examples.dhall repl
+npx spago repl -p nullable-examples
 ```
 
 Once the REPL is loaded, go ahead and add the following imports:
